@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A53332B-5930-43D9-BD3B-25939ABFB8A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Amazon.Code</RootNamespace>
+    <AssemblyName>Amazon.Code</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Infrastructure\Sales\SubmitOrderProcessor.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f04262a00-111b-4bef-ac3f-94944d42a947</SourceModelReference>
+      <ItemGuid>4354b0b7-8851-4720-93e1-558f16533e23</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\Sales\SubmitOrderSender.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252fce00b092-0469-408e-8b2c-fabe151a1511</SourceModelReference>
+      <ItemGuid>6cb3ca10-ac50-4e80-bfe7-f9f55b8e293b</ItemGuid>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales\SubmitOrderProcessor.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/c:\Users\sean farmar\documents\visual studio 2012\Projects\Amazon\Amazon.slnbldr%252f04262a00-111b-4bef-ac3f-94944d42a947</SourceModelReference>
+      <ItemGuid>40df1d1a-a740-4da8-9da5-6ef4adffb32d</ItemGuid>
+    </Compile>
+    <Compile Include="Sales\SubmitOrderSender.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/c:\Users\sean farmar\documents\visual studio 2012\Projects\Amazon\Amazon.slnbldr%252f832a8df7-083c-4240-9529-3b10c029803f</SourceModelReference>
+      <ItemGuid>12aeba1f-d222-4887-82c5-a0ac37c123ab</ItemGuid>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Amazon.Contracts\Amazon.Contracts.csproj">
+      <Project>{1BAFAC67-CE18-4470-A974-2BE6BF3AF51B}</Project>
+      <Name>Amazon.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Amazon.InternalMessages\Amazon.InternalMessages.csproj">
+      <Project>{EAF56EDC-F790-4D9B-9795-CC870F8CD78F}</Project>
+      <Name>Amazon.InternalMessages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
