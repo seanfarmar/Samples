@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales\OrderAccepted.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f583f90b8-adb0-4e41-9371-4a459c896490</SourceModelReference>
+      <ItemGuid>5bc5525c-e8cd-4ade-bd30-df4fba82fe20</ItemGuid>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

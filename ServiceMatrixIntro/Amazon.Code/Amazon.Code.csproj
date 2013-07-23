@@ -36,6 +36,14 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Billing\OrderAcceptedProcessor.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252fd8fa2408-10e0-4d77-9e5d-8c5f4756d08e</SourceModelReference>
+      <ItemGuid>54e82c75-ede1-4894-937d-2f0ec34698ef</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\Billing\OrderAcceptedProcessor.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252fd8fa2408-10e0-4d77-9e5d-8c5f4756d08e</SourceModelReference>
+      <ItemGuid>ede62b80-f350-4b25-a4d0-cdc5c9658f15</ItemGuid>
+    </Compile>
     <Compile Include="Infrastructure\Sales\SubmitOrderProcessor.cs">
       <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f04262a00-111b-4bef-ac3f-94944d42a947</SourceModelReference>
       <ItemGuid>4354b0b7-8851-4720-93e1-558f16533e23</ItemGuid>

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{64230387-E2FE-4696-AFF2-5542A4CA6A55}</ProjectGuid>
+    <ProjectGuid>{19E45A6C-54CF-4F10-8EA7-F12F08564411}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amazon.OrderProcessing</RootNamespace>
-    <AssemblyName>Amazon.OrderProcessing</AssemblyName>
+    <RootNamespace>Amazon.Billing</RootNamespace>
+    <AssemblyName>Amazon.Billing</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -47,92 +47,88 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Amazon.Code\Infrastructure\Sales\SubmitOrderProcessor.cs">
-      <Link>Infrastructure\SubmitOrderProcessor.cs</Link>
+    <Compile Include="..\Amazon.Code\Billing\OrderAcceptedProcessor.cs">
+      <Link>Billing\OrderAcceptedProcessor.cs</Link>
     </Compile>
-    <Compile Include="..\Amazon.Code\Sales\SubmitOrderProcessor.cs">
-      <Link>Sales\SubmitOrderProcessor.cs</Link>
+    <Compile Include="..\Amazon.Code\Infrastructure\Billing\OrderAcceptedProcessor.cs">
+      <Link>Infrastructure\OrderAcceptedProcessor.cs</Link>
     </Compile>
     <Compile Include="EndpointConfig.cs">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
-      <ItemGuid>2ea03d2d-7988-41d0-9cb1-9eb1e4d79afe</ItemGuid>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
+      <ItemGuid>7e431d83-0160-4f57-ad87-e31577beed06</ItemGuid>
     </Compile>
     <Compile Include="Infrastructure\MessageConventions.cs">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/c:\Users\sean farmar\documents\visual studio 2012\Projects\Amazon\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
-      <ItemGuid>25060e45-356d-47f5-bf2b-5a3b5a7a1bff</ItemGuid>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
+      <ItemGuid>5940880f-30df-4802-90ae-e58856a5b78b</ItemGuid>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\INServiceBusComponent.cs" />
     <Compile Include="TransportConfig.cs">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
-      <ItemGuid>459a128f-488f-45ba-bbb7-0d3dba0f356f</ItemGuid>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
+      <ItemGuid>b585a74e-59f6-4472-972a-a9e429b59d9e</ItemGuid>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infrastructure\GeneratedCode\Config\MasterNodeConfig.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ItemGuid>52b65b5a-f988-4776-9bf4-6e4d7f80869f</ItemGuid>
+      <ItemGuid>b2a72c63-b5b3-4ce7-8080-911c9c067d1c</ItemGuid>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infrastructure\GeneratedCode\Config\MessageForwardingInCaseOfFaultConfig.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ItemGuid>94c48c3f-fbc1-4c3c-9f8e-153a88f30bd9</ItemGuid>
+      <ItemGuid>ef46a392-fea3-4d11-b163-68d6587945d9</ItemGuid>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infrastructure\GeneratedCode\Config\TransportConfig.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ItemGuid>237e5f0a-cc06-4be7-a378-cab3ed77a51d</ItemGuid>
+      <ItemGuid>f2cff351-909c-4229-83ac-e91af056f6f3</ItemGuid>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infrastructure\GeneratedCode\Config\UnicastBusConfig.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ItemGuid>20c3b163-44c2-443e-b3d3-95200155baa3</ItemGuid>
+      <ItemGuid>a32ad004-7eac-4dcb-a650-eecfa2e9a6a1</ItemGuid>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infrastructure\GeneratedCode\Config\TransportConnectionString.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ItemGuid>58aafa03-e112-42a9-b695-70aa9585901b</ItemGuid>
+      <ItemGuid>72194a32-1b06-4a89-8eb1-2827d5437a5c</ItemGuid>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infrastructure\GeneratedCode\Config\SecondLevelRetriesConfig.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ItemGuid>0f778171-a4a0-480e-98d3-c76e0f9ed423</ItemGuid>
+      <ItemGuid>db2123f0-11a4-4fe0-beb8-3b0b020146bd</ItemGuid>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/c:\Users\sean farmar\documents\visual studio 2012\Projects\Amazon\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
-      <ItemGuid>c045fd2c-e154-411e-b39b-42d208479c4f</ItemGuid>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
+      <ItemGuid>567dfd44-bcfe-44dc-bcf8-308976fa0f97</ItemGuid>
     </None>
     <Content Include="Infrastructure\Logging.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/c:\Users\sean farmar\documents\visual studio 2012\Projects\Amazon\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ItemGuid>714dabd0-fecb-4748-bbf9-9f9b96605f1a</ItemGuid>
+      <ItemGuid>3cdc95ac-48d1-486e-99ba-d9fc5becff82</ItemGuid>
     </Content>
     <None Include="packages.config">
-      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f17246567-0489-4bcb-8e69-175684a69a84</SourceModelReference>
-      <ItemGuid>54823f14-d7b3-48d9-9813-b5e0689a6aef</ItemGuid>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Amazon/Element/C:\Code\Github\Samples\ServiceMatrixIntro\Amazon.slnbldr%252f33ad8359-c62a-4690-bde9-5e3e39275c7e</SourceModelReference>
+      <ItemGuid>8df27aaa-cca3-4e3a-8377-de9c93d64d26</ItemGuid>
     </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Amazon.Contracts\Amazon.Contracts.csproj">
       <Project>{1BAFAC67-CE18-4470-A974-2BE6BF3AF51B}</Project>
       <Name>Amazon.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Amazon.InternalMessages\Amazon.InternalMessages.csproj">
-      <Project>{EAF56EDC-F790-4D9B-9795-CC870F8CD78F}</Project>
-      <Name>Amazon.InternalMessages</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

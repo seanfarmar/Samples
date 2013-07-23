@@ -3,7 +3,7 @@ using NServiceBus;
  
 namespace Amazon.OrderProcessing
 {
-	public partial class EndpointConfig : IConfigureThisEndpoint, AsA_Server    
+	public partial class EndpointConfig : IConfigureThisEndpoint, AsA_Publisher    
 	{
     }
 }
