@@ -342,7 +342,7 @@
                   <elements>
                     <collection Id="c219d918-679e-4f6e-b52d-de1c517df678" definitionId="4640ec7c-c09c-42a6-90de-ff9cd99fd6b1" definitionName="Components" instanceName="Components">
                       <elements>
-                        <element Id="a9e6fce4-ffd4-4f3a-95e1-e753c44481ae" definitionId="58bd0df2-5250-472d-a169-4d72726325ae" definitionName="ComponentLink" instanceName="01. Billing. OrderAcceptedProcessor">
+                        <element Id="a9e6fce4-ffd4-4f3a-95e1-e753c44481ae" definitionId="58bd0df2-5250-472d-a169-4d72726325ae" definitionName="ComponentLink" instanceName="01. Billing.OrderAcceptedProcessor">
                           <properties>
                             <property Id="44c8c3ef-4dde-4161-9c6b-a7bde30dfac1" definitionId="66fb536d-f50e-4dcc-a671-77a42f3f9890" definitionName="ComponentId" rawValue="d8fa2408-10e0-4d77-9e5d-8c5f4756d08e" />
                             <property Id="7021aa2c-031f-4766-ba5e-dd3daa5970d6" definitionId="677c28b7-2bf4-4004-8327-d4f93f38107e" definitionName="ComponentName" rawValue=" OrderAcceptedProcessor" />
