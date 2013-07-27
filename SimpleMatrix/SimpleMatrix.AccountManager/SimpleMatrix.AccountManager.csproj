@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A23678A2-A38A-49F9-A890-B8F024C6B6D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleMatrix.AccountManager</RootNamespace>
+    <AssemblyName>SimpleMatrix.AccountManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NServiceBus">
+      <HintPath>..\packages\NServiceBus.Interfaces.4.0.0-rc0001\lib\net40\NServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\packages\NServiceBus.4.0.0-rc0001\lib\net40\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Host">
+      <HintPath>..\packages\NServiceBus.Host.4.0.0-rc0001\lib\net40\NServiceBus.Host.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SimpleMatrix.Code\AccountManagement\CreateAccountProcessor.cs">
+      <Link>AccountManagement\CreateAccountProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\SimpleMatrix.Code\Infrastructure\AccountManagement\CreateAccountProcessor.cs">
+      <Link>Infrastructure\CreateAccountProcessor.cs</Link>
+    </Compile>
+    <Compile Include="EndpointConfig.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <ItemGuid>b972891b-ebe3-4e8c-a1f6-74c9c3337a35</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\MessageConventions.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <ItemGuid>00b0a2eb-2669-4982-814e-528ba09b035d</ItemGuid>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Infrastructure\INServiceBusComponent.cs" />
+    <Compile Include="TransportConfig.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <ItemGuid>71a653b6-05b1-4888-8e4e-ea20d0428766</ItemGuid>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Infrastructure\GeneratedCode\Config\MasterNodeConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>bcd8120b-9740-40d7-a8a2-c316ac44db1a</ItemGuid>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Infrastructure\GeneratedCode\Config\MessageForwardingInCaseOfFaultConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>b3749b35-8982-44cd-9e55-094834a99d21</ItemGuid>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Infrastructure\GeneratedCode\Config\TransportConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>1dbd2b26-63be-44fb-8028-46a1bd5b46df</ItemGuid>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Infrastructure\GeneratedCode\Config\UnicastBusConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>220b9157-e280-44f8-af17-960a20ebc664</ItemGuid>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Infrastructure\GeneratedCode\Config\TransportConnectionString.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>0c555c7a-c941-4f93-97e7-1210dfbc43f5</ItemGuid>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Infrastructure\GeneratedCode\Config\SecondLevelRetriesConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>154d661c-e6c3-4fd1-a0c5-82a6278fac0f</ItemGuid>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <ItemGuid>5e68f8c6-114e-4b3e-96ac-0133c553ffee</ItemGuid>
+    </None>
+    <Content Include="Infrastructure\Logging.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>347aa8ff-c2a0-4c03-b3d7-3065f50e788c</ItemGuid>
+    </Content>
+    <None Include="packages.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f1c9546ce-bbeb-4c9a-9472-4fcea83fd27b</SourceModelReference>
+      <ItemGuid>7c1c6826-4f88-46c1-9282-35f85f2ef67a</ItemGuid>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleMatrix.InternalMessages\SimpleMatrix.InternalMessages.csproj">
+      <Project>{FF899D5B-FFAB-4004-B569-730CEDB356D0}</Project>
+      <Name>SimpleMatrix.InternalMessages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

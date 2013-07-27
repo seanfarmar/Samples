@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C971AF2D-1FAE-4C69-A665-9E25DBCD2092}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleMatrix.Code</RootNamespace>
+    <AssemblyName>SimpleMatrix.Code</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountManagement\CreateAccountProcessor.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f80caad83-4f56-4f9c-9660-cd7f13123242</SourceModelReference>
+      <ItemGuid>8b5259fc-d21e-4d60-baff-353ea9d66047</ItemGuid>
+    </Compile>
+    <Compile Include="AccountManagement\CreateAccountSender.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f86d07b5e-f1c9-4c0e-8c3a-51d9a29ddd84</SourceModelReference>
+      <ItemGuid>a28e7ff3-0da1-4e31-beb4-6935bd79415f</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\AccountManagement\CreateAccountProcessor.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f80caad83-4f56-4f9c-9660-cd7f13123242</SourceModelReference>
+      <ItemGuid>2d3175df-8a1f-4e9b-bf2d-fbfe92fa4db8</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\AccountManagement\CreateAccountSender.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/SimpleMatrix/Element/C:\Code\Github\Samples\SimpleMatrix\SimpleMatrix.slnbldr%252f5e3a049a-554f-45f5-8571-98e8e4b495f4</SourceModelReference>
+      <ItemGuid>953afd40-1f7a-48df-be3e-760bcdd76bb3</ItemGuid>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleMatrix.Contracts\SimpleMatrix.Contracts.csproj">
+      <Project>{440739C6-9AE8-4A51-A964-0293EE4394F1}</Project>
+      <Name>SimpleMatrix.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleMatrix.InternalMessages\SimpleMatrix.InternalMessages.csproj">
+      <Project>{FF899D5B-FFAB-4004-B569-730CEDB356D0}</Project>
+      <Name>SimpleMatrix.InternalMessages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
