@@ -73,18 +73,6 @@
             throw new InvalidOperationException(message, exception);
         }
 
-        public static SecureString StringToSecureString(string input)
-        {
-            SecureString output = new SecureString();
-            int l = input.Length;
-            char[] s = input.ToCharArray(0, l);
-            foreach (char c in s)
-            {
-                output.AppendChar(c);
-            }
-            return output;
-        }
-
         public static Process  startProccess(string fileName, string arguments)
         {
             Process process = null;
