@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqSetupTester", "MsmqSetupTester\MsmqSetupTester.csproj", "{9161C689-DB2F-477B-AB11-BE3D309C33C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{B82880E2-2D2E-402C-89ED-D073FBA7B8A7}"
+	ProjectSection(SolutionItems) = preProject
+		lib\NServiceBus.PowerShell.dll = lib\NServiceBus.PowerShell.dll
+		lib\NServiceBus.PowerShell.pdb = lib\NServiceBus.PowerShell.pdb
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9161C689-DB2F-477B-AB11-BE3D309C33C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9161C689-DB2F-477B-AB11-BE3D309C33C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9161C689-DB2F-477B-AB11-BE3D309C33C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9161C689-DB2F-477B-AB11-BE3D309C33C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
