@@ -139,7 +139,7 @@
 
                 case OperatingSystemEnum.Server2012:
                     // process = () => Process.Start(Powershell, PowershellInstallCommand, "user", ProcessUtil.StringToSecureString("password"), "machinename");
-                    process = () => ProcessUtil.startProccess(Powershell, PowershellInstallCommand);
+                    process = () => ProcessUtil.StartProccess(Powershell, PowershellInstallCommand);
                     break;
 
                 default:

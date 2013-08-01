@@ -4,9 +4,7 @@
     using System.Security.Principal;
     using System.ServiceProcess;
     using System.ComponentModel;
-    using System.Security;
     using System.Diagnostics;
-    using System.IO;
 
     /// <summary>
     /// Utility class for changing a windows service's status.
@@ -73,48 +71,43 @@
             throw new InvalidOperationException(message, exception);
         }
 
-        public static Process  startProccess(string fileName, string arguments)
+        public static Process  StartProccess(string fileName, string arguments)
         {
-            Process process = null;
+            Process process;
 
             using(process = new Process())
             {
-                
-                StreamWriter streamWriter;
-                StreamReader streamReader;
-                StreamReader errStreamReader;
+                var processInfo = new ProcessStartInfo(fileName, arguments)
+                {
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    CreateNoWindow = false,
+                    LoadUserProfile = true,
+                    UseShellExecute = false
+                };
 
-                ProcessStartInfo processInfo = new ProcessStartInfo(fileName, arguments);                
-                processInfo.RedirectStandardInput = true;
-                processInfo.RedirectStandardOutput = true;
-                processInfo.RedirectStandardError = true;
-                processInfo.CreateNoWindow = false;
-                processInfo.LoadUserProfile = true;
-                processInfo.UseShellExecute = false;          
-                
                 process.StartInfo = processInfo;
                 
                 process.Start();
                 
-                streamWriter = process.StandardInput;                
+                var streamWriter = process.StandardInput;                
                 
-                streamReader = process.StandardOutput;                
+                var streamReader = process.StandardOutput;                
                 
-                errStreamReader = process.StandardError;                
+                var errStreamReader = process.StandardError;                
                 
                 streamWriter.AutoFlush = true;              
                 
                 var result = string.Empty;
-                
-                var erroMessage = string.Empty;
-                
+
                 streamWriter.Write(result);
                 
                 streamWriter.Close();
                 
                 result += streamReader.ReadToEnd();
                 
-                erroMessage = errStreamReader.ReadToEnd();
+                string erroMessage = errStreamReader.ReadToEnd();
                 
                 if (erroMessage != string.Empty) 
                     throw new InvalidOperationException(
