@@ -468,4 +468,276 @@
     <Key>ServiceMatrix Guidance.SamplesJoin.StateOverride</Key>
     <Value>False</Value>
   </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.First Time Users.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Understanding.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What is Solution Builder?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Using Pattern Toolkits.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Pre-requisites for Using Pattern Toolkits.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Installing a Pattern Toolkit.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Browsing &amp; Managing Installed Pattern Toolkits.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Viewing &amp; Configuring Solution Elements .StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Running Automation.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join1.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join2.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Concepts.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What are Patterns?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What are Pattern Toolkits?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What is a Solution Element?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What are Related Items?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Guidance.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What is Guidance?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What is a Guidance Workflow?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What is a Guidance Document?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What is the Guidance Explorer?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What is the Guidance Browser?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join3.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Automation.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What is Automation?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.What are Artifact Links?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join4.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join5.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join6.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Guides.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Using.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Understanding: What are Pattern Toolkits?.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Install/Uninstall Pattern Toolkits.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Use a Pattern.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Add New Solution Elements.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Control the display of Solution Elements.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Work with Multiple Views.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Find the Guidance.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Run Automation.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Use Drag and Drop.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Navigate to or Open Solution Items.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Validate Solution Elements.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Fix Related Items.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.How To: Troubleshoot Pattern Problems.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join7.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Authoring.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join8.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Reference.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Troubleshooting Toolkits.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Environment.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Visual Studio Experimental Instance.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Solution Builder.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Add New Solution Element Dialog.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Pattern Model Designer.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Guidance Workflow Explorer.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Solution Explorer.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Properties Window.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Add/New Project/Item Dialog.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Extension Manager.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Options.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Tracing Window.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join9.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join10.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.More Information.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Known Issues.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Build error: “store must be open for this operation”.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Join11.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
+  <KeyValueOfstringstring>
+    <Key>Using Patterns in Solution Development.Feedback.StateOverride</Key>
+    <Value>False</Value>
+  </KeyValueOfstringstring>
 </ArrayOfKeyValueOfstringstring>
