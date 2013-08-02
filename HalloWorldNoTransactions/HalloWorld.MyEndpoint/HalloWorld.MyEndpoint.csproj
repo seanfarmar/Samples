@@ -42,6 +42,7 @@
       <HintPath>..\packages\NServiceBus.Host.4.0.2\lib\net40\NServiceBus.Host.exe</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
