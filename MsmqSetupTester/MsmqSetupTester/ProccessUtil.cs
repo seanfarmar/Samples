@@ -71,7 +71,7 @@
             throw new InvalidOperationException(message, exception);
         }
 
-        public static Process  StartProccess(string fileName, string arguments)
+        public static Process StartProccessDelegate(string fileName, string arguments)
         {
             Process process;
 
@@ -91,30 +91,77 @@
                 
                 process.Start();
                 
-                var streamWriter = process.StandardInput;                
-                
-                var streamReader = process.StandardOutput;                
-                
                 var errStreamReader = process.StandardError;                
-                
-                streamWriter.AutoFlush = true;              
                 
                 var result = string.Empty;
 
-                streamWriter.Write(result);
-                
-                streamWriter.Close();
-                
-                result += streamReader.ReadToEnd();
-                
-                string erroMessage = errStreamReader.ReadToEnd();
-                
-                if (erroMessage != string.Empty) 
-                    throw new InvalidOperationException(
-                        string.Format("Error invoking process: {0} with arguments: {1}, the process returnd an error: {2}", fileName, arguments, erroMessage));
+                string standardError = errStreamReader.ReadToEnd();
+
+                Console.WriteLine("Waiting for process to complete.");
+
+                process.WaitForExit();
+
+
+                if (standardError != string.Empty)
+                {
+                    Console.WriteLine("Error invoking process: {0} with arguments: {1}, the process returnd an error: {2}, ExitCode was: {3}", fileName, arguments, standardError, process.ExitCode.ToString());
+                    
+                    return null;
+                }
+
+                // not sure we need a separate case for this...
+                if (process.ExitCode != 0)
+                {
+                    Console.WriteLine("Error invoking process: {0} with arguments: {1}, the process returnd an error: {2}, ExitCode was: {3}", fileName, arguments, standardError, process.ExitCode.ToString());
+
+                    return null;
+                }
             }
             
             return process;
+        }
+
+        public static bool  StartProccess(string fileName, string arguments)
+        {
+            Process process;
+
+            bool result = true;
+
+            using(process = new Process())
+            {
+                var processInfo = new ProcessStartInfo(fileName, arguments)
+                {
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,                   
+                    CreateNoWindow = false,
+                    LoadUserProfile = true,
+                    UseShellExecute = false
+                };
+
+                process.StartInfo = processInfo;
+
+                process.EnableRaisingEvents = true;
+                
+                process.Start();
+                
+                var errStreamReader = process.StandardError;                
+                
+                string standardError = errStreamReader.ReadToEnd();
+
+                Console.WriteLine("Waiting for process to complete.");
+
+                process.WaitForExit();
+
+                if (standardError != string.Empty)
+                {
+                    result = false;
+
+                    Console.WriteLine("Error invoking process: {0} with arguments: {1}, the process returnd an error: {2}", fileName, arguments, standardError);
+                }
+            }
+            
+            return result;
         }
     }
 }

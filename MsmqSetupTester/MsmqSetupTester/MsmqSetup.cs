@@ -52,10 +52,11 @@
         public static bool IsInstallationGood()
         {
             var msmqSetup = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\MSMQ\Setup");
-            if (msmqSetup == null)
-                return false;
+
+            if (msmqSetup == null) return false;
 
             var installedComponents = new List<string>(msmqSetup.GetValueNames());
+            
             msmqSetup.Close();
 
             return HasOnlyNeededComponents(installedComponents);
@@ -65,12 +66,16 @@
         {
             Console.WriteLine("Checking if MSMQ is installed.");
 
+            bool result = true;
+
             var os = GetOperatingSystem();
+
             Func<Process> process = null;
 
             if (IsMsmqInstalled())
             {
                 Console.WriteLine("MSMQ is installed.");
+
                 Console.WriteLine("Checking that only needed components are active.");
 
                 if (IsInstallationGood())
@@ -114,6 +119,7 @@
                 }
 
                 Console.WriteLine("Uninstalling MSMQ.");
+
                 RunSetup(process);
             }
             else
@@ -138,8 +144,7 @@
                     break;
 
                 case OperatingSystemEnum.Server2012:
-                    // process = () => Process.Start(Powershell, PowershellInstallCommand, "user", ProcessUtil.StringToSecureString("password"), "machinename");
-                    process = () => ProcessUtil.StartProccess(Powershell, PowershellInstallCommand);
+                    process = () => ProcessUtil.StartProccessDelegate(Powershell, PowershellInstallCommand);
                     break;
 
                 default:
@@ -147,21 +152,24 @@
                     break;
             }
 
-            RunSetup(process);
+            result = RunSetup(process);
 
-            Console.WriteLine("Installation of MSMQ successful.");
+            if (result) Console.WriteLine("Installation of MSMQ successful.");
 
-            return true;
+            if (!result) Console.WriteLine("Installation of MSMQ NOT successful.");
+
+            return result;
         }
 
-        private static void RunSetup(Func<Process> action)
+        private static bool RunSetup(Func<Process> action)
         {
             using (var process = action())
             {
-                if (process == null) return;
+                if (process == null) return false;
 
                 Console.WriteLine("Waiting for process to complete.");
-                process.WaitForExit();
+
+                return true;
             }
         }
 
@@ -193,6 +201,7 @@
             }
 
             Console.WriteLine("Installation instruction file created.");
+            
             Console.WriteLine("Invoking MSMQ installation.");
 
             return Process.Start("sysocmgr", "/i:sysoc.inf /x /q /w /u:%temp%\\" + Path.GetFileName(p));
