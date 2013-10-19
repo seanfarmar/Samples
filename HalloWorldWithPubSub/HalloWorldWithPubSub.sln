@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{11CCE19F-573E-469E-AD42-0401B7A301B6}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorld.MyEndpoint", "HalloWorld.MyEndpoint\HalloWorld.MyEndpoint.csproj", "{54F1FA8F-21A9-432E-97AE-EFEE9C5196D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorld.Commands", "HalloWorld.Commands\HalloWorld.Commands.csproj", "{3BBF04B0-4074-4149-BD6A-95DA50F991DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorld.Events", "HallowWorld.Events\HalloWorld.Events.csproj", "{0E72B3F2-4A39-439F-B4A0-E2F3235C19C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorld.Client", "HalloWorld.Client\HalloWorld.Client.csproj", "{6D413F31-F9E6-47EB-833B-11558AC54FD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorld.MySubscriber", "HalloWorld.MySubscriber\HalloWorld.MySubscriber.csproj", "{CD1A1AFE-D7C3-4D06-AFF7-43C741F22E54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorld.Unobtrusive", "HalloWorld.Unobtrusive\HalloWorld.Unobtrusive.csproj", "{4BD3EDC5-EB56-43F0-B052-82E6984B2196}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54F1FA8F-21A9-432E-97AE-EFEE9C5196D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F1FA8F-21A9-432E-97AE-EFEE9C5196D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F1FA8F-21A9-432E-97AE-EFEE9C5196D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F1FA8F-21A9-432E-97AE-EFEE9C5196D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BBF04B0-4074-4149-BD6A-95DA50F991DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBF04B0-4074-4149-BD6A-95DA50F991DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBF04B0-4074-4149-BD6A-95DA50F991DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBF04B0-4074-4149-BD6A-95DA50F991DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E72B3F2-4A39-439F-B4A0-E2F3235C19C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E72B3F2-4A39-439F-B4A0-E2F3235C19C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E72B3F2-4A39-439F-B4A0-E2F3235C19C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E72B3F2-4A39-439F-B4A0-E2F3235C19C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D413F31-F9E6-47EB-833B-11558AC54FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D413F31-F9E6-47EB-833B-11558AC54FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D413F31-F9E6-47EB-833B-11558AC54FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D413F31-F9E6-47EB-833B-11558AC54FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD1A1AFE-D7C3-4D06-AFF7-43C741F22E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD1A1AFE-D7C3-4D06-AFF7-43C741F22E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD1A1AFE-D7C3-4D06-AFF7-43C741F22E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD1A1AFE-D7C3-4D06-AFF7-43C741F22E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD3EDC5-EB56-43F0-B052-82E6984B2196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD3EDC5-EB56-43F0-B052-82E6984B2196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD3EDC5-EB56-43F0-B052-82E6984B2196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD3EDC5-EB56-43F0-B052-82E6984B2196}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
