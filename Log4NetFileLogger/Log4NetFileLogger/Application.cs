@@ -3,11 +3,11 @@ using NServiceBus;
 
 namespace Log4NetFileLogger
 {
-    public class Application : IWantToRunAtStartup
+    public class Application : IWantToRunWhenBusStartsAndStops
     {
         public IBus Bus { get; set; }
 
-        public void Run()
+        public void Start()
         {
             Console.WriteLine("Press 'S' to send a message or 'Q' to exit.");
 
@@ -32,8 +32,6 @@ namespace Log4NetFileLogger
             }
         }
 
-        public void Stop()
-        {
-        }
+        public void Stop(){}
     }
 }
