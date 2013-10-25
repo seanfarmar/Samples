@@ -1,6 +1,3 @@
-
-
-
 namespace Server
 {
     using NServiceBus;
