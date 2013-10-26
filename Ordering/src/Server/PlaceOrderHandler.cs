@@ -8,6 +8,8 @@
         public void Handle(PlaceOrder message)
         {
             Console.WriteLine(@"Order for Product:{0} placed", message.Product);
+
+            // throw new Exception("Uh oh - something went wrong....");
         }
     }
 }
