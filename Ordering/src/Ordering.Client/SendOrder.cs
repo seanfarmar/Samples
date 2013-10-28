@@ -1,9 +1,9 @@
-﻿namespace Client
+﻿namespace Ordering.Client
 {
     using System;
-    using System.Diagnostics;
     using Messages;
     using NServiceBus;
+
     public class SendOrder : IWantToRunWhenBusStartsAndStops
     {
         public IBus Bus { get; set; }
@@ -16,7 +16,7 @@
             {
                 var id = Guid.NewGuid();
 
-                Bus.Send("Server", new PlaceOrder() { Product = "New shoes" });
+                Bus.Send("Ordering.Server", new PlaceOrder() { Product = "New shoes", Id = Guid.NewGuid()});
 
                 Console.WriteLine("==========================================================================");
                 Console.WriteLine("Send a new PlaceOrder message with id: {0}", id.ToString("N"));
