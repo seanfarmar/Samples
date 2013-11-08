@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<license id="656faccf-87ab-487c-9721-79191cccbb37" expiration="2013-10-20T00:00:00.0000000" type="Trial" LicenseVersion="4.0" WorkerThreads="Max" AllowedNumberOfWorkerNodes="Max" LicenseType="Trial" MaxMessageThroughputPerSecond="Max">
+  <name>sean.farmar@indy-code.com</name>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>d7RUUXxA3tiI8b5GgW6/VEM4jx0=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>XA91UlucpnxIejOeC7YbRCW8uLAWGgI/j9NnsDWfiHKJJsFREFhkkqVMnMf566FSjWPWAJNlThH5z1fdT7ZMDr8nxVJmXr6PLZlSCoTXWx9vHboCWIvunNUGF4FCBefwSBcBRqbr137TTyB+DYQa+GuAUXh1ZKXJ8AAwVYxq/Lw=</SignatureValue>
+  </Signature>
+</license>
