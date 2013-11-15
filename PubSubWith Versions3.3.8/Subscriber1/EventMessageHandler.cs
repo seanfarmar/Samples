@@ -1,0 +1,21 @@
+namespace Subscriber1
+{
+	using System;
+	using log4net;
+	using MyMessages;
+	using NServiceBus;
+
+	public class EventMessageHandler : IHandleMessages<EventMessage>
+    {
+        public void Handle(EventMessage message)
+        {
+            Logger.Info(string.Format("Subscriber 1 received EventMessage with Id {0}.", message.EventId));
+            Logger.Info(string.Format("Message time: {0}.", message.Time));
+            Logger.Info(string.Format("Message duration: {0}.", message.Duration));
+			Console.WriteLine("Subscriber 1 received EventMessage type {0}", message.GetType().ToString());
+            Console.WriteLine("==========================================================================");
+        }
+
+        private static readonly ILog Logger = LogManager.GetLogger(typeof (EventMessageHandler));
+    }
+}
