@@ -9,6 +9,7 @@
 			get { return "mock string"; }
 			set { }
 		}
+
 		public int NumberOfUsagesOfThisInstance { get; set; }
     }
 }
