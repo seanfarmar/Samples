@@ -1,0 +1,21 @@
+﻿@model Web.Models.CreateMessageCommandModel
+
+@{
+	ViewBag.Title = "title";
+	Layout = @"~\views\shared\_Layout.cshtml";
+}
+
+<h2>title</h2>
+
+@using (Html.BeginForm("Create", "Home")) {
+    <fieldset>
+        <legend>Send a message</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Say)
+                @Html.TextBoxFor(m => m.Say)
+            </li>
+        </ol>
+        <input type="submit" value="Send Message" />
+    </fieldset>
+}
