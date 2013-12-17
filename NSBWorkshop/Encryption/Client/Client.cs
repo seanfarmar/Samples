@@ -7,8 +7,6 @@ namespace Client
     using System.Collections.Generic;
     using NServiceBus.Encryption.Config;
 
-    public class EndpointConfig : IConfigureThisEndpoint, AsA_Client {}
-
     public class SecurityConfig : IWantCustomInitialization
     {
         public void Init()
