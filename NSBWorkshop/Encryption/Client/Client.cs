@@ -1,11 +1,9 @@
-﻿using System;
-using NServiceBus;
-using Messages;
-
-namespace Client
+﻿namespace Client
 {
     using System.Collections.Generic;
-    using NServiceBus.Encryption.Config;
+    using System;
+    using NServiceBus;
+    using Messages;
 
     public class SecurityConfig : IWantCustomInitialization
     {
@@ -16,9 +14,9 @@ namespace Client
         }
     }
 
-    public class Runner : IWantToRunAtStartup
+    public class Runner : IWantToRunWhenBusStartsAndStops
     {
-        public void Run()
+        public void Start()
         {
             Console.WriteLine("Press 'Enter' to send a message.");
             while (Console.ReadLine() != null)

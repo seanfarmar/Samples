@@ -1,9 +1,9 @@
-﻿using System;
-using Messages;
-using NServiceBus;
-
-namespace Server
+﻿namespace Server
 {
+    using System;
+    using Messages;
+    using NServiceBus;
+
     public class Handler : IHandleMessages<MessageWithSecretData>
     {
         public void Handle(MessageWithSecretData message)

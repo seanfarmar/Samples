@@ -1,9 +1,8 @@
-﻿using NServiceBus;
-
-namespace Messages
+﻿namespace Messages
 {
     using System;
     using System.Collections.Generic;
+    using NServiceBus;
 
     public class MessageWithSecretData : IMessage
     {
