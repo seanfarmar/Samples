@@ -4,16 +4,16 @@ namespace Sender
 	using NServiceBus;
 	using Receiver.Messages;
 
-	public class SendingEndpoint : IWantToRunAtStartup
+	public class SendingEndpoint : IWantToRunWhenBusStartsAndStops
 	{
-		readonly IBus bus;
+		readonly IBus _bus;
 
 		public SendingEndpoint(IBus bus)
 		{
-			this.bus = bus;
+			this._bus = bus;
 		}
 
-		public void Run()
+		public void Start()
 		{
             Console.WriteLine("Press 'Enter' to send a large message (>4MB)");
             Console.WriteLine("Press 'E' to send a message that will exceed the limit and throw");
@@ -27,7 +27,7 @@ namespace Sender
                     SendMessageThatIsLargerThanMsmqCanHandle();
                 else if (key.Key == ConsoleKey.Enter)
                 {
-                    bus.Send<MessageWithLargePayload>(m =>
+                    _bus.Send<MessageWithLargePayload>(m =>
                                                           {
                                                               m.SomeProperty =
                                                                   "This message contains a large blob that will be sent on the data bus";
@@ -45,7 +45,7 @@ namespace Sender
 		{
 			try
 			{
-				bus.Send<AnotherMessageWithLargePayload>(m =>
+				_bus.Send<AnotherMessageWithLargePayload>(m =>
 				{
 					m.LargeBlob = new byte[1024 * 1024 * 5];//5MB
 				});
