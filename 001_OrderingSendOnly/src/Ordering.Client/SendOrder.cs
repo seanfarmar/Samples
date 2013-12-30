@@ -16,7 +16,7 @@
             {
                 var id = Guid.NewGuid();
 
-                Bus.Send("Ordering.Server", new PlaceOrder() { Product = "New shoes", Id = Guid.NewGuid()});
+                Bus.Send("Ordering.Server", new PlaceOrder() { Product = "New shoes", Id = id});
 
                 Console.WriteLine("==========================================================================");
                 Console.WriteLine("Send a new PlaceOrder message with id: {0}", id.ToString("N"));
