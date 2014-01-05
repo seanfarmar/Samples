@@ -30,11 +30,11 @@ untilDate=04%2F13%2F2012+04%3A00+PM&transactionType=RECURRING&quantity=1&currenc
 			{
 				using (var client = new HttpClient())
 				{
-					client.BaseAddress = new Uri("http://localhost:8853");
+					client.BaseAddress = new Uri("http://localhost:12936/");
 
 					var postId = Guid.NewGuid();
 
-					var result = client.PostAsJsonAsync("/api/charge" + PostTestString + "&PostId=" + postId,"We are nor really using this :)").Result;
+					var result = client.PostAsJsonAsync("/api" + PostTestString + "&PostId=" + postId,"We are nor really using this :)").Result;
 
 					var statusCode = result.IsSuccessStatusCode ? "Complete Successfully" : "Failed to Complete Successfully";
 					

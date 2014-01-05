@@ -1,6 +1,5 @@
 ﻿namespace IPNCallback.Controllers
 {
-	using System;
 	using System.Web.Http;
 	using BackEnd.Messages;
 
@@ -15,14 +14,5 @@
 			//post a command
 			WebApiApplication.Bus.Send(submitNewChargeFromIpnCommand);
 		}
-	}
-
-	public class SampleIpn
-	{
-		public string ProductId { get; set; }
-
-		public string ProductName { get; set; }
-
-		public Guid PostId { get; set; }
 	}
 }

@@ -37,6 +37,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SampleIpn.cs" />
     <Compile Include="SubmitNewChargeFromIpn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
