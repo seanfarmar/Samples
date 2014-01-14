@@ -1,11 +1,14 @@
-﻿namespace IPN.TestConsole
+﻿using BackEnd.Messages;
+
+namespace IPN.TestConsole
 {
 	using System;
 	using System.Net.Http;
 
 	class Program
 	{
-		private const string PostTestString = @"?ProductId=821594&ProductName=Pageonce+Gold";
+        private const string PostTestString = @"?ProductId=821594&ProductName=Pageonce+Gold&ChargeAmount=33.23&AccountId=1234567890123&FirstName=Alex&LastName=Sam&TransactionDate=07/12/2013 03:12 PM&TestMode=Y&ReferenceNumber=12345&
+ContractId=321&ContractName=Alex's contract&Quantity=3&InvoiceAmountUsd=123456";
 			/*&contractId=3047232&contractName=Full+Version
 &contractPrice=4.99&referenceNumber=65503442&transactionDate=03%2F13%2F2012+04%3A00+PM&
 untilDate=04%2F13%2F2012+04%3A00+PM&transactionType=RECURRING&quantity=1&currency=USD&addCD=N
