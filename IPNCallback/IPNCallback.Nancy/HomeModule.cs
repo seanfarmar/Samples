@@ -98,12 +98,15 @@ namespace IPNCallback.Nancy
 	    private void ProcessIpnMessage(SubmitNewChargeFromIpn chargeFromIpn)
 	    {
 	        // bus.send with nancy self hosting in NServiceBus.hos process....
+
+            SendIssueStandardLicense(chargeFromIpn);
+
 	        var order = GetIssueStandardLicense(chargeFromIpn);
             
             //Test validation. Will be used in test to check if all required fields are filled
             order.IsValid();
 
-	        SendIssueStandardLicense(order);
+	       
 	    }
 
 	    private static IssueStandardLicense GetIssueStandardLicense(SubmitNewChargeFromIpn chargeFromIpn)
@@ -142,7 +145,7 @@ namespace IPNCallback.Nancy
 	        return order;
 	    }
 
-	    private void SendIssueStandardLicense(IssueStandardLicense order)
+        private void SendIssueStandardLicense(SubmitNewChargeFromIpn order)
 	    {
 	        
 	    }
