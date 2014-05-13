@@ -6,13 +6,15 @@ namespace Endpoint
     using Raven.Client;
     using Raven.Client.Document;
     using StructureMap;
+    using StructureMap.Graph;
 
     public class EndpointConfig : IConfigureThisEndpoint, IWantCustomInitialization, AsA_Server
     {
 	    public void Init()
 	    {
-	        Configure.With()
-	            .StructureMapBuilder();
+            Configure.With()
+                .StructureMapBuilder()
+                .RavenPersistence();
 	    }
     }
 
@@ -20,7 +22,7 @@ namespace Endpoint
     {
         public void Init()
         {
-            var store = new DocumentStore { Url = "http://localhost:8080", DefaultDatabase = "MyDatabase" };
+            var store = new DocumentStore { Url = "http://localhost:8082", DefaultDatabase = "MyDatabase" };
 
             store.Initialize();
 
@@ -34,11 +36,11 @@ namespace Endpoint
                     .Use(ctx => ctx.GetInstance<IDocumentStore>()
                         .OpenSession());
 
+                PluginCache.AddFilledType(typeof(IDocumentSession));
+
                 c.For<IManageUnitsOfWork>()
                     .Use<MyRavenUnitOfWork>();
             });
-
-            // Configure.With().StructureMapBuilder(ObjectFactory.Container);
         }
     }
 }
