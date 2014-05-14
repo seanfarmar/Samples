@@ -3,6 +3,7 @@
     using System;
     using NServiceBus.UnitOfWork;
     using Raven.Client;
+    using Raven.Client.Document;
 
     public class MyRavenUnitOfWork : IManageUnitsOfWork
     {
@@ -16,6 +17,7 @@
         {
             if (ex == null)
             {
+                Console.WriteLine("In MyRavenUnitOfWork.End, SessionId: {0} ", ((DocumentSession)Session).Id);
                 Session.SaveChanges();
             }
         }
