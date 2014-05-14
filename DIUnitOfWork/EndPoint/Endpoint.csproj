@@ -67,7 +67,9 @@
     <Compile Include="..\SenderEndPoint\MessageConfig.cs">
       <Link>MessageConfig.cs</Link>
     </Compile>
+    <Compile Include="OtherCommandData.cs" />
     <Compile Include="CommandData.cs" />
+    <Compile Include="MyOtherCommandHandler.cs" />
     <Compile Include="MyCommandHandler.cs" />
     <Compile Include="EndpointConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
