@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96F54A60-A3A6-4FE4-892A-796F35E33591}</ProjectGuid>
+    <ProjectGuid>{EC6CD883-E51E-43C2-8093-D822E8D69ED1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Endpoint</RootNamespace>
-    <AssemblyName>Endpoint</AssemblyName>
+    <RootNamespace>MonitoringNotifications.SenderEndPoint</RootNamespace>
+    <AssemblyName>MonitoringNotifications.SenderEndPoint</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,53 +42,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NServiceBus.Host.4.6.1\lib\net40\NServiceBus.Host.exe</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.ObjectBuilder.StructureMap">
-      <HintPath>..\packages\NServiceBus.StructureMap.4.6.1\lib\net40\NServiceBus.ObjectBuilder.StructureMap.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.PowerShell">
-      <HintPath>..\packages\NServiceBus.PowerShell.4.3.0\lib\net40\NServiceBus.PowerShell.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Abstractions">
-      <HintPath>..\packages\RavenDB.Client.2.5.2878\lib\net45\Raven.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Client.Lightweight">
-      <HintPath>..\packages\RavenDB.Client.2.5.2878\lib\net45\Raven.Client.Lightweight.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceControl.Plugin.Heartbeat">
-      <HintPath>..\packages\ServiceControl.Plugin.Heartbeat.1.0.1\lib\net40\ServiceControl.Plugin.Heartbeat.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap">
-      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SenderEndPoint\MessageConfig.cs">
-      <Link>MessageConfig.cs</Link>
-    </Compile>
-    <Compile Include="OtherCommandData.cs" />
-    <Compile Include="CommandData.cs" />
-    <Compile Include="MyOtherCommandHandler.cs" />
-    <Compile Include="MyCommandHandler.cs" />
+    <Compile Include="Bootstapper.cs" />
     <Compile Include="EndpointConfig.cs" />
+    <Compile Include="MyCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="ripple.dependencies.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Messages\Messages.csproj">
+    <ProjectReference Include="..\Messages\MonitoringNotifications.Messages.csproj">
       <Project>{D4C5F2C1-FFEC-4C84-8D3A-D715D572EBD5}</Project>
-      <Name>Messages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyRavenUnitOfWork\MyUnitOfWork.csproj">
-      <Project>{069552C5-A327-4609-A181-133118041993}</Project>
-      <Name>MyUnitOfWork</Name>
+      <Name>MonitoringNotifications.Messages</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
