@@ -3,13 +3,10 @@
     using System;
     using Messages.Commands;
     using NServiceBus;
-    using Raven.Client;
 
     public class MyCommandHandler : IHandleMessages<MyCommand>
 	{
-        public IDocumentSession Session { get; set; }
-
-		public void Handle(MyCommand message)
+        public void Handle(MyCommand message)
 		{
             Console.WriteLine("Handeling a MyCommand of message type: {1} with Id {0}.", message.IdGuid, message.GetType());
 

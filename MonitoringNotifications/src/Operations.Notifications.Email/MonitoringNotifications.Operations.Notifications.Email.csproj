@@ -33,20 +33,21 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
+    <Reference Include="NServiceBus, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NServiceBus.Interfaces\lib\net40\NServiceBus.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Core">
-      <HintPath>..\SenderEndPoint\bin\Debug\NServiceBus.Core.dll</HintPath>
+    <Reference Include="NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus\lib\net40\NServiceBus.Core.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Host">
+    <Reference Include="NServiceBus.Host, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NServiceBus.Host\lib\net40\NServiceBus.Host.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EndpointConfig.cs" />
@@ -59,10 +60,6 @@
     <ProjectReference Include="..\Messages\MonitoringNotifications.Messages.csproj">
       <Project>{D4C5F2C1-FFEC-4C84-8D3A-D715D572EBD5}</Project>
       <Name>MonitoringNotifications.Messages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NServiceBus.Operations.Contracts\NServiceBus.Operations.Contracts.csproj">
-      <Project>{298B4B77-D1B4-4DEA-B525-0BC8C586A7B9}</Project>
-      <Name>NServiceBus.Operations.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
