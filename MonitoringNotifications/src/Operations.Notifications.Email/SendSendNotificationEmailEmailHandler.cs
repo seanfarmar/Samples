@@ -121,7 +121,7 @@ namespace MonitoringNotifications.Operations.Notifications.Email
 
         string ApplyTemplate(string templateId, Dictionary<string, string> parameters)
         {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Format("NServiceBus.Operations.Email.Templates.{0}.html", templateId)))
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Format("MonitoringNotifications.Operations.Notifications.Email.Templates.{0}.html", templateId)))
             using (var reader = new StreamReader(stream))
             {
                 var template = reader.ReadToEnd();
