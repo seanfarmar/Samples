@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EndpointConfig.cs" />
-    <Compile Include="SendSendNotificationEmailEmailHandler.cs" />
+    <Compile Include="SendNotificationEmailHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Templates\NotificationOfApplicationError.html" />

@@ -19,23 +19,24 @@
             Logger.InfoFormat("Message with id {0} failed with reason {1}", message.FailedMessageId, message.FailureDetails.Exception.Message);
 
             //for more info about the exception make calls to ServiceControl's http api: /api/errors/{message.message.FailedMessageId}   #returns full metadata for message
+            // TODO: move to config
+            const string serviceControlToken = "344b8642ce5e23aa8fef0ffd0cd126";
 
+            var messageBody = string.Format("Message with id {0} failed with reason: '{1}' /n, go to http://particular.net:9090/#/failedMessages", message.FailedMessageId, message.FailureDetails.Exception.Message);
+            
+            // TODO: move to config
+            const string url = "rooms/message";
+
+            // TODO: move to config
+            const string uri = "https://api.hipchat.com/v1/";
             // call hipchat
             // https://www.hipchat.com/docs/api/method/rooms/message
             // https://api.hipchat.com/v1/rooms/message
 
-            const string sericeControlToken = "344b8642ce5e23aa8fef0ffd0cd126";
-
-            var messageBody = string.Format("Message with id {0} failed with reason: '{1}' /n, go to http://particular.net:9090/#/failedMessages", message.FailedMessageId, message.FailureDetails.Exception.Message);
-
-            //const string url = "rooms/message?format=json&auth_token=" + sericeControlToken;
-            const string url = "rooms/message";
-            const string uri = "https://api.hipchat.com/v1/";
-
             var formParameters = new Dictionary<string, string>
                 {
                     {"format", "json"},
-                    {"auth_token", sericeControlToken},
+                    {"auth_token", serviceControlToken},
                     {"message",messageBody},
                     {"room_id","398432"},
                     {"from","Notifier"},

@@ -15,7 +15,7 @@ namespace MonitoringNotifications.Operations.Notifications.Email
     using NServiceBus.Logging;
     using NServiceBus.ObjectBuilder;
 
-    public class SendSendNotificationEmailEmailHandler : IHandleMessages<SendNotificationEmail>
+    public class SendNotificationEmailHandler : IHandleMessages<SendNotificationEmail>
     {
         public IBuilder Builder { get; set; }
         private static readonly ILog Logger = LogManager.GetLogger(typeof(SendNotificationEmail));
