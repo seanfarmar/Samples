@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\MyTestCommand.cs" />
     <Compile Include="Commands\MyCommand.cs" />
     <Compile Include="Commands\SendNotificationEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

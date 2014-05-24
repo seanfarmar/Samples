@@ -33,8 +33,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="NServiceBus">
       <HintPath>..\packages\NServiceBus.Interfaces\lib\net40\NServiceBus.dll</HintPath>
     </Reference>
     <Reference Include="NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
@@ -60,6 +59,10 @@
     <ProjectReference Include="..\Messages\MonitoringNotifications.Messages.csproj">
       <Project>{D4C5F2C1-FFEC-4C84-8D3A-D715D572EBD5}</Project>
       <Name>MonitoringNotifications.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonitoringNotifications.CustomSerializer\MonitoringNotifications.CustomSerializer.csproj">
+      <Project>{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}</Project>
+      <Name>MonitoringNotifications.CustomSerializer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

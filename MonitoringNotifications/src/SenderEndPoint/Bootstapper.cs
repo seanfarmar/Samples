@@ -13,6 +13,7 @@
 	    public void Start()
 		{
 			Console.WriteLine("Press 's' to send lots of commands");
+            Console.WriteLine("Press 't' to send a test command");
             Console.WriteLine("Press 'e' to send a command that will throw an exception.");
 
 		    string cmd;
@@ -36,7 +37,7 @@
 
                             Console.WriteLine("Send a command message number {2} type: {1} with Id {0}."
                                 , _myCommand.IdGuid, _myCommand.GetType(),i);
-                            Console.WriteLine("==========================================================================");                            
+                            Console.WriteLine("==========================================================================");
 			            }
 			            break;
 
@@ -50,9 +51,27 @@
 
                         Bus.SendLocal(exceptionCommand);
 
-                        Console.WriteLine("Sending a exceptionCommand the will throw, message type: {1} with Id {0}."
+                        Console.WriteLine("Sending a exceptionCommand that will throw, message type: {1} with Id {0}."
                             , exceptionCommand.IdGuid, exceptionCommand.GetType());
-			            Console.WriteLine("==========================================================================");                       
+			            Console.WriteLine("==========================================================================");  
+                                         
+                        break;
+
+                    case "t":
+                        
+                        var testCommand = Bus.CreateInstance<MyTestCommand>(m =>
+                        {
+                            m.IdGuid = Guid.NewGuid();
+                            m.Name = "My Name is TEST!";
+                            m.Throw = true;
+                        });
+
+                        Bus.Send(testCommand);
+
+                        Console.WriteLine("Sending a testCommand, message type: {1} with Id {0}."
+                            , testCommand.IdGuid, testCommand.GetType());
+                        Console.WriteLine("==========================================================================");
+
                         break;
 			    }
             }

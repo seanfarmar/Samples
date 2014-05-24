@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringNotifications.Sen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringNotifications.Operations.Notifications.Email", "Operations.Notifications.Email\MonitoringNotifications.Operations.Notifications.Email.csproj", "{7F3422CD-17EA-4F87-B5CB-D2C618F985E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringNotifications.CustomSerializer", "MonitoringNotifications.CustomSerializer\MonitoringNotifications.CustomSerializer.csproj", "{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7F3422CD-17EA-4F87-B5CB-D2C618F985E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F3422CD-17EA-4F87-B5CB-D2C618F985E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F3422CD-17EA-4F87-B5CB-D2C618F985E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -22,6 +22,12 @@ namespace MonitoringNotifications.Operations.Notifications.Email
 
         public void Handle(SendNotificationEmail message)
         {
+            var supperssExternal = (bool)new AppSettingsReader().GetValue("SupperssExternal", typeof(bool));      
+
+            Logger.DebugFormat("Handeling SendNotificationEmail to: {0} and Context {1}", message.To, message.Parameters["Context"]);
+
+            if (supperssExternal) return; 
+
             var templateParameters = message.Parameters;
     
             var body = ApplyTemplate(message.EmailBodyTemplateId, templateParameters);
@@ -107,7 +113,9 @@ namespace MonitoringNotifications.Operations.Notifications.Email
                     }
                 }
 
-                mail.Send(mailMessage);
+                Logger.DebugFormat("Sending an email...");
+
+                // mail.Send(mailMessage);
             }
         }
 

@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3C3F3C5B-E7B0-49E9-8905-AD23F7BFF217}</ProjectGuid>
+    <ProjectGuid>{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MonitoringNotifications.ServiceControl.Notifications</RootNamespace>
-    <AssemblyName>MonitoringNotifications.ServiceControl.Notifications</AssemblyName>
+    <RootNamespace>MonitoringNotifications.CustomSerializer</RootNamespace>
+    <AssemblyName>MonitoringNotifications.CustomSerializer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +28,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NServiceBus">
@@ -39,45 +36,27 @@
     <Reference Include="NServiceBus.Core">
       <HintPath>..\packages\NServiceBus\lib\net40\NServiceBus.Core.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Host">
-      <HintPath>..\packages\NServiceBus.Host\lib\net40\NServiceBus.Host.exe</HintPath>
-    </Reference>
-    <Reference Include="ServiceControl.Contracts">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\ServiceControl.Contracts.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EndpointConfig.cs" />
-    <Compile Include="MyTestCommandHandler.cs" />
-    <Compile Include="MessageFailedHandler.cs" />
+    <Compile Include="AdapterMessageSerializer.cs" />
+    <Compile Include="AdapterMessageSerializerConfigurationExtensions.cs" />
+    <Compile Include="AdapterSerialization.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="ripple.dependencies.config" />
+    <None Include="ripple.dependencies.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="lib\ServiceControl.Contracts.dll" />
-    <Content Include="lib\ServiceControl.Contracts.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Messages\MonitoringNotifications.Messages.csproj">
-      <Project>{d4c5f2c1-ffec-4c84-8d3a-d715d572ebd5}</Project>
-      <Name>MonitoringNotifications.Messages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MonitoringNotifications.CustomSerializer\MonitoringNotifications.CustomSerializer.csproj">
-      <Project>{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}</Project>
-      <Name>MonitoringNotifications.CustomSerializer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(SolutionDir)..\BuildSupport\RippleRestoreTask.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <StartAction>Program</StartAction>
-    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
-  </PropertyGroup>
+  <Import Project="$(SolutionDir)..\BuildSupport\RippleRestoreTask.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

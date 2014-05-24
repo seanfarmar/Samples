@@ -58,8 +58,13 @@
       <Project>{D4C5F2C1-FFEC-4C84-8D3A-D715D572EBD5}</Project>
       <Name>MonitoringNotifications.Messages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MonitoringNotifications.CustomSerializer\MonitoringNotifications.CustomSerializer.csproj">
+      <Project>{2666B7A3-3033-4B7E-837E-1870DAA2EA6E}</Project>
+      <Name>MonitoringNotifications.CustomSerializer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)..\BuildSupport\RippleRestoreTask.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
