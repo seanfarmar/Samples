@@ -6,14 +6,14 @@
     using System.Linq;
     using NServiceBus;
     using NServiceBus.MessageInterfaces.MessageMapper.Reflection;
+    using NServiceBus.Pipeline;
     using NServiceBus.Serialization;
     using NServiceBus.Serializers.Json;
     using NServiceBus.Serializers.XML;
-    using NServiceBus.Unicast.Messages;
 
     public class AdapterMessageSerializer : IMessageSerializer
     {
-        public LogicalMessageFactory MessageFactory { get; set; }
+        public PipelineExecutor PipelineExecutor { get; set; }
 
         public string ContentType { get; private set; }
 
@@ -27,6 +27,7 @@
             {
                 ContentType = ContentTypes.Json;               
             }
+
             if(ContentType == ContentTypes.Json)
                 _serielizer = new JsonMessageSerializer((new MessageMapper()));
 
@@ -39,15 +40,7 @@
         public object[] Deserialize(Stream stream, IList<Type> messageTypes = null)
         {
             // look into the headers and determine what serilizer to use
-
-            NServiceBus.Pipeline.Contexts.ReceivePhysicalMessageContext physicalMessageContext = 
-                MessageFactory.PipelineExecutor.CurrentContext as NServiceBus.Pipeline.Contexts.ReceivePhysicalMessageContext;
-
-            if (physicalMessageContext == null)
-                ContentType = ContentTypes.Xml;
-
-            if (physicalMessageContext != null)
-                ContentType = physicalMessageContext.PhysicalMessage.Headers[Headers.ContentType];
+            ContentType = PipelineExecutor.CurrentContext.Get<TransportMessage>("NServiceBus.IncomingPhysicalMessage").Headers[Headers.ContentType];
 
             if(ContentType == ContentTypes.Json)
                 _serielizer = new JsonMessageSerializer((new MessageMapper())){SkipArrayWrappingForSingleMessages = SkipArrayWrappingForSingleMessages};
