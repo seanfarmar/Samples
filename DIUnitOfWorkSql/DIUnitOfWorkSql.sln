@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenderEndPoint", "SenderEndPoint\SenderEndPoint.csproj", "{EC6CD883-E51E-43C2-8093-D822E8D69ED1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUnitOfWork", "MyRavenUnitOfWork\MyUnitOfWork.csproj", "{069552C5-A327-4609-A181-133118041993}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUnitOfWork", "MySqlUnitOfWork\MyUnitOfWork.csproj", "{069552C5-A327-4609-A181-133118041993}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

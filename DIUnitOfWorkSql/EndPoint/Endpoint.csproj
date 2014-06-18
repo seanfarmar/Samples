@@ -45,26 +45,11 @@
     <Reference Include="NServiceBus.ObjectBuilder.StructureMap">
       <HintPath>..\packages\NServiceBus.StructureMap.4.6.1\lib\net40\NServiceBus.ObjectBuilder.StructureMap.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.PowerShell">
-      <HintPath>..\packages\NServiceBus.PowerShell.4.3.0\lib\net40\NServiceBus.PowerShell.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Abstractions">
-      <HintPath>..\packages\RavenDB.Client.2.5.2878\lib\net45\Raven.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Client.Lightweight">
-      <HintPath>..\packages\RavenDB.Client.2.5.2878\lib\net45\Raven.Client.Lightweight.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceControl.Plugin.Heartbeat">
-      <HintPath>..\packages\ServiceControl.Plugin.Heartbeat.1.0.1\lib\net40\ServiceControl.Plugin.Heartbeat.dll</HintPath>
-    </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SenderEndPoint\MessageConfig.cs">
@@ -85,10 +70,6 @@
     <ProjectReference Include="..\Messages\Messages.csproj">
       <Project>{D4C5F2C1-FFEC-4C84-8D3A-D715D572EBD5}</Project>
       <Name>Messages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyRavenUnitOfWork\MyUnitOfWork.csproj">
-      <Project>{069552C5-A327-4609-A181-133118041993}</Project>
-      <Name>MyUnitOfWork</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

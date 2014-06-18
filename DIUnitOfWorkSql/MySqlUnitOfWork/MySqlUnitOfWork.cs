@@ -15,7 +15,7 @@
         {
             if (ex == null)
             {
-                Console.WriteLine("In MySqlUnitOfWork.End, SessionId: {0} ", ((ISession)Session).Id);
+                Console.WriteLine("In MySqlUnitOfWork.End, SessionId: {0} ", Session.SessionFactory.GetCurrentSession().);
                 Session.Flush();
             }
         }
