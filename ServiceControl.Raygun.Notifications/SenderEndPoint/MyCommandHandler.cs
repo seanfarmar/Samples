@@ -6,7 +6,7 @@
 
     public class MyCommandHandler : IHandleMessages<MyCommand>
     {
-        public DateTime? DateTime { get; set; }
+        public DateTime? MyDateTime { get; set; }
 
         public void Handle(MyCommand message)
         {
@@ -20,11 +20,11 @@
                 try
                 {
                     // this should throw with stack trace
-                    DateTime date = DateTime.Value.Date;
+                    DateTime date = MyDateTime.Value.Date;
                 }
                 catch (Exception e)
                 {
-                    throw new Exception("Ho nos, MyCommand, we have an issue...", e);
+                    throw new Exception("Ho nos, MyCommand, we have an issue..." + DateTime.UtcNow, e);
                 }
             }
         }
