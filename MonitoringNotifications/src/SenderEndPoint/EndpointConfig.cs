@@ -7,8 +7,8 @@ namespace MonitoringNotifications.SenderEndPoint
     {
         public EndpointConfig()
         {
-            //Configure.Serialization.Json();
-            Configure.Serialization.Xml();
+            Configure.Serialization.Json();
+            //Configure.Serialization.Xml();
             //Configure.Serialization.Adapter();
         }
     }

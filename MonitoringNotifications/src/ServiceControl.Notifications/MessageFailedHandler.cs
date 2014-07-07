@@ -21,10 +21,10 @@
 
             Logger.InfoFormat("Message with id {0} failed with reason {1}", message.FailedMessageId, message.FailureDetails.Exception.Message);
 
-            var messageBody = string.Format("Message with id {0} failed with reason: '{1}' /n, go to http://particular.net:9090/#/failedMessages", message.FailedMessageId, message.FailureDetails.Exception.Message);
+            var messageBody = string.Format("Message with id {0} failed with reason: '{1}'", message.FailedMessageId, message.FailureDetails.Exception.Message);
 
             // send an email
-            const string operationsEmail = "production@particular.net";
+            const string operationsEmail = "xxxxxx@xxxxxxx.xxx";
 
             var parameters = new Dictionary<string, string>
             {
@@ -43,7 +43,7 @@
             
             //for more info about the exception make calls to ServiceControl's http api: /api/errors/{message.message.FailedMessageId}   #returns full metadata for message
             // TODO: move to config
-            const string serviceControlToken = "344b8642ce5e23aa8fef0ffd0cd126";
+            const string serviceControlToken = "xxxxxxxxxxxxxxxx";
             
             // TODO: move to config
             const string url = "rooms/message";
