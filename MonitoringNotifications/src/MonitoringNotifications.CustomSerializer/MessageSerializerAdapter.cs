@@ -22,7 +22,7 @@
 
         private IMessageSerializer _serielizer;
 
-        private IMessageSerializer _defaultSerializer;
+        private readonly IMessageSerializer _defaultSerializer;
         
         private readonly Dictionary<string, IMessageSerializer> _serializers = new Dictionary<string, IMessageSerializer>();
         
@@ -57,19 +57,8 @@
 
         public void Serialize(object[] messages, Stream stream)
         {
-            //if (string.IsNullOrEmpty(ContentType))
-            //{
-            //    ContentType = ContentTypes.Json;               
-            //}
-
             SetSerilizer(ContentType);
 
-            //if(ContentType == ContentTypes.Json)
-            //    _serielizer = new JsonMessageSerializer((new MessageMapper()));
-
-            //if (ContentType == ContentTypes.Xml)
-            //    _serielizer = InitialiseXmlSerializer(null);
-            
             _serielizer.Serialize(messages, stream);
         }
 
@@ -79,13 +68,7 @@
             ContentType = PipelineExecutor.CurrentContext.Get<TransportMessage>("NServiceBus.IncomingPhysicalMessage").Headers[Headers.ContentType];
             
             SetSerilizer(ContentType);
-
-            //if(ContentType == ContentTypes.Json)
-            //    _serielizer = new JsonMessageSerializer((new MessageMapper())){SkipArrayWrappingForSingleMessages = SkipArrayWrappingForSingleMessages};
-
-            //if(ContentType == ContentTypes.Xml)
-            //    _serielizer = InitialiseXmlSerializer(messageTypes);
-
+            
             return _serielizer.Deserialize(stream, messageTypes);
         }
 
@@ -98,21 +81,5 @@
 
             _serielizer = _serializers[contentType] ?? _defaultSerializer;
         }
-
-        //private IMessageSerializer InitialiseXmlSerializer(IList<Type> messageTypes)
-        //{
-        //    var mapper = new MessageMapper();
-
-        //    if (messageTypes == null)
-        //        messageTypes = Configure.TypesToScan.Where(MessageConventionExtensions.IsMessageType).ToList();
-
-        //    mapper.Initialize(messageTypes);
-
-        //    var xmlserieliser = new XmlMessageSerializer(mapper);
-
-        //    xmlserieliser.Initialize(messageTypes);
-
-        //    return xmlserieliser;
-        //}
     }
 }
