@@ -10,14 +10,17 @@
     using NServiceBus;
     using NServiceBus.Logging;
 
-    class MessageFailedHandler:IHandleMessages<MessageFailed>
+    class MessageFailedHandler : IHandleMessages<MessageFailed>
     {
         static readonly ILog Logger = LogManager.GetLogger(typeof(MessageFailedHandler));
+
+        static HttpClient httpClient = new HttpClient();
+
         public IBus Bus { get; set; }
-        
+
         public void Handle(MessageFailed message)
         {
-            var supperssExternal = (bool)new AppSettingsReader().GetValue("SupperssExternal", typeof(bool)); 
+            var supperssExternal = (bool)new AppSettingsReader().GetValue("SupperssExternal", typeof(bool));
 
             Logger.InfoFormat("Message with id {0} failed with reason {1}", message.FailedMessageId, message.FailureDetails.Exception.Message);
 
@@ -39,12 +42,12 @@
                 Parameters = parameters
             });
 
-            if(supperssExternal) return;            
-            
+            if (supperssExternal) return;
+
             //for more info about the exception make calls to ServiceControl's http api: /api/errors/{message.message.FailedMessageId}   #returns full metadata for message
             // TODO: move to config
             const string serviceControlToken = "xxxxxxxxxxxxxxxx";
-            
+
             // TODO: move to config
             const string url = "rooms/message";
 
@@ -68,22 +71,19 @@
 
             HttpStatusCode resultStatusCode;
 
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(uri);
+            httpClient.BaseAddress = new Uri(uri);
 
-                HttpContent content = new FormUrlEncodedContent(formParameters);
+            HttpContent content = new FormUrlEncodedContent(formParameters);
 
-                var result = client.PostAsync(url, content).Result;
+            var result = httpClient.PostAsync(url, content).Result;
 
-                resultStatusCode = result.StatusCode;
-            }
+            resultStatusCode = result.StatusCode;
 
             if (resultStatusCode != HttpStatusCode.OK)
             {
                 Logger.InfoFormat("Failed to send the message to hipchat: Message with id {0} failed with reason {1}", message.FailedMessageId, message.FailureDetails.Exception.Message);
             }
-            
+
             // TODO: Add a call to pager duty
         }
     }
