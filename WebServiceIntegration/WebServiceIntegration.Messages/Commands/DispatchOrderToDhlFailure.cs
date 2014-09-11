@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class DispatchOrderToDhl
+    public class DispatchOrderToDhlFailure 
     {
         public Guid OrderId { get; set; }
         public Guid DispatchId { get; set; }

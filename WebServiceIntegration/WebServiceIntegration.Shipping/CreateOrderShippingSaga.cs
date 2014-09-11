@@ -2,9 +2,10 @@
 {
     using System;
     using Messages.Commands;
+    using NServiceBus;
     using NServiceBus.Saga;
 
-    class CreateOrderShippingSaga : Saga<CreateOrderShippingSagaData>, IAmStartedByMessages<CreateOrderShipping>
+    class CreateOrderShippingSaga : Saga<CreateOrderShippingSagaData>, IAmStartedByMessages<CreateOrderShipping>, IHandleMessages<DispatchOrderToDhlFailure>, IHandleMessages<DispatchOrderToDhlSucsess>
     {
         public void Handle(CreateOrderShipping message)
         {
@@ -20,12 +21,18 @@
             //Dispatch the order to DHL
             Bus.Send(dispatchOrderToDhl);
         }
-    }
 
-    internal class CreateOrderShippingSagaData : IContainSagaData
-    {
-        public Guid Id { get; set; }
-        public string Originator { get; set; }
-        public string OriginalMessageId { get; set; }
+        public void Handle(DispatchOrderToDhlFailure message)
+        {
+            // depending on the web service, we can retry
+            // notfy on failiure
+            // timeout to retry later
+            // and so on
+        }
+
+        public void Handle(DispatchOrderToDhlSucsess message)
+        {
+            // complete of mark complete in state to keep the data or rehidrate the saga
+        }
     }
 }
