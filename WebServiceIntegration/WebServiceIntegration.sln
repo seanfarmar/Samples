@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceIntegration.Client", "WebServiceIntegration.Client\WebServiceIntegration.Client.csproj", "{BE4F8ECD-7679-4FAF-850B-65AC752BD7CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceIntegration.Shipping", "WebServiceIntegration.Shipping\WebServiceIntegration.Shipping.csproj", "{0225771F-16C6-44F1-BB22-CBEC57C3B131}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE4F8ECD-7679-4FAF-850B-65AC752BD7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4F8ECD-7679-4FAF-850B-65AC752BD7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4F8ECD-7679-4FAF-850B-65AC752BD7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4F8ECD-7679-4FAF-850B-65AC752BD7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0225771F-16C6-44F1-BB22-CBEC57C3B131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0225771F-16C6-44F1-BB22-CBEC57C3B131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0225771F-16C6-44F1-BB22-CBEC57C3B131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0225771F-16C6-44F1-BB22-CBEC57C3B131}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
