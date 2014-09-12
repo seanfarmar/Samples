@@ -2,6 +2,7 @@
 {
     using System;
     using Nancy;
+    using Nancy.ModelBinding;
 
     public class MainNancyModule : NancyModule
     {
@@ -9,12 +10,12 @@
         {
             Get["/"] = x => "Hello World";
 
-            Post["/DispatchOrder/"] = parameters =>
+            Post["/api/DispatchOrder/"] = parameters =>
             {
                 var response = new Response {StatusCode = HttpStatusCode.OK};
 
-                var item = new DispachRequest(Request.Form);
-                
+                var item = this.Bind<DispachRequest>();
+
                 if (item.Fail)
                     response.StatusCode = HttpStatusCode.BadRequest;
 
@@ -27,16 +28,16 @@
     {
         public bool Fail;
 
-        public DispachRequest(dynamic form)
-        {
-            OrderId = form.OrderId;
-            DispatchId = form.DispatchId;
-            CountryCode = form.CountryCode;
-            DhlCustomerNumber = form.DhlCustomerNumber;
-            ThrowException = form.ThrowException;
+        //public DispachRequest(dynamic form)
+        //{
+        //    OrderId = form.OrderId;
+        //    DispatchId = form.DispatchId;
+        //    CountryCode = form.CountryCode;
+        //    DhlCustomerNumber = form.DhlCustomerNumber;
+        //    ThrowException = form.ThrowException;
 
-            Fail = ThrowException;
-        }
+        //    Fail = ThrowException;
+        //}
 
         public Guid OrderId { get; set; }
         public Guid DispatchId { get; set; }

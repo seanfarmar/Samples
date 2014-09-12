@@ -34,6 +34,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Response\DispatchOrderToDhlFailure.cs" />
+    <Compile Include="Response\DispatchOrderToDhlSucsess.cs" />
     <Compile Include="Commands\DispatchOrderToDhl.cs" />
     <Compile Include="Commands\CreateOrderShipping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -42,7 +44,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Conventions\" />
     <Folder Include="Events\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
