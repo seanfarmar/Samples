@@ -1,8 +1,8 @@
 ﻿namespace WebServiceIntegration.Client
 {
     using System;
-    using NServiceBus;
     using Messages.Commands;
+    using NServiceBus;
 
     public class Bootstapper : IWantToRunWhenBusStartsAndStops
     {
@@ -25,9 +25,11 @@
                     case "s":
                         for (int i = 0; i < 30; i++)
                         {
-                            _orderShipping =  new CreateOrderShipping()
+                            _orderShipping = new CreateOrderShipping
                             {
-                                OrderId = Guid.NewGuid(), OrderCountryCode = "IRL", OrderNumber = i
+                                OrderId = Guid.NewGuid(),
+                                OrderCountryCode = "IRL",
+                                OrderNumber = i
                             };
 
                             Bus.Send(_orderShipping);
@@ -35,14 +37,18 @@
                             Console.WriteLine("Send a MyOtherCommand message number {2} type: {1} with Id {0}."
                                 , _orderShipping.OrderId
                                 , _orderShipping.GetType(), i);
-                            Console.WriteLine("==========================================================================");
+                            Console.WriteLine(
+                                "==========================================================================");
                         }
                         break;
 
                     case "e":
-                        var exceptionCommand = new CreateOrderShipping()
+                        var exceptionCommand = new CreateOrderShipping
                         {
-                            OrderId = Guid.NewGuid(), OrderCountryCode = "IRL", OrderNumber = 100, ThrowException = true
+                            OrderId = Guid.NewGuid(),
+                            OrderCountryCode = "IRL",
+                            OrderNumber = 100,
+                            ThrowException = true
                         };
 
                         Bus.Send(exceptionCommand);
@@ -50,7 +56,7 @@
                         Console.WriteLine("Sending a exceptionCommand the will throw, message type: {1} with Id {0}."
                             , exceptionCommand.OrderId, exceptionCommand.GetType());
                         Console.WriteLine("==========================================================================");
-                        
+
                         break;
                 }
             }

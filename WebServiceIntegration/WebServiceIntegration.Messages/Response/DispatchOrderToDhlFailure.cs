@@ -3,10 +3,10 @@
     using System;
     using System.Net;
 
-    public class DispatchOrderToDhlFailure 
+    public class DispatchOrderToDhlFailure
     {
         public Guid OrderId { get; set; }
         public Guid DispatchId { get; set; }
-       public HttpStatusCode HttpStatusCode { get; set; }
+        public HttpStatusCode HttpStatusCode { get; set; }
     }
 }

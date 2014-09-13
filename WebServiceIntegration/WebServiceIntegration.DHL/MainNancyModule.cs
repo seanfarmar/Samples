@@ -1,8 +1,10 @@
 ﻿namespace WebServiceIntegration.DHL
 {
     using System;
+    using System.Net;
     using Nancy;
     using Nancy.ModelBinding;
+    using HttpStatusCode = Nancy.HttpStatusCode;
 
     public class MainNancyModule : NancyModule
     {
@@ -12,9 +14,11 @@
 
             Post["/api/DispatchOrder/"] = parameters =>
             {
+                var item = this.Bind<DispachRequest>();
+
                 var response = new Response {StatusCode = HttpStatusCode.OK};
 
-                var item = this.Bind<DispachRequest>();
+                if (item.ThrowException) throw new WebException("oooops , we have a problem");
 
                 if (item.Fail)
                     response.StatusCode = HttpStatusCode.BadRequest;
@@ -26,18 +30,10 @@
 
     public class DispachRequest
     {
-        public bool Fail;
-
-        //public DispachRequest(dynamic form)
-        //{
-        //    OrderId = form.OrderId;
-        //    DispatchId = form.DispatchId;
-        //    CountryCode = form.CountryCode;
-        //    DhlCustomerNumber = form.DhlCustomerNumber;
-        //    ThrowException = form.ThrowException;
-
-        //    Fail = ThrowException;
-        //}
+        public bool Fail
+        {
+            get { return new Random().Next(2) == 0; }
+        }
 
         public Guid OrderId { get; set; }
         public Guid DispatchId { get; set; }
