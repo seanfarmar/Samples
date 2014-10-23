@@ -2,7 +2,7 @@ using NServiceBus;
 
 namespace HalloWorld.MyEndpoint
 {
-    public class EndpointConfig : IConfigureThisEndpoint, IWantCustomLogging, AsA_Server, AsA_Publisher
+    public class EndpointConfig : IConfigureThisEndpoint, IWantCustomLogging, AsA_Publisher
     {
         public void Init()
 	    {
