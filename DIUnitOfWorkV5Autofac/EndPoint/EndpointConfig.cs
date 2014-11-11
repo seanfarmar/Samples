@@ -1,5 +1,6 @@
 namespace Endpoint
 {
+    using Conventions;
     using MyUnitOfWork;
     using NServiceBus;
     using NServiceBus.ObjectBuilder;
@@ -13,6 +14,7 @@ namespace Endpoint
         public void Customize(BusConfiguration configuration)
         {
             configuration.UsePersistence<RavenDBPersistence>();
+            configuration.ApplyCustomMessageConventions();
         }
     }
 
