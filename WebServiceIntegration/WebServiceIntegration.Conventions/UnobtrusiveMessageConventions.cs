@@ -2,11 +2,11 @@
 {
     using NServiceBus;
 
-    internal class UnobtrusiveMessageConventions : IWantToRunBeforeConfiguration
+    internal class UnobtrusiveMessageConventions : INeedInitialization
     {
-        public void Init()
+        public void Customize(BusConfiguration configuration)
         {
-            Configure.Instance
+            configuration.Conventions()
                 .DefiningCommandsAs(t =>
                     t.Namespace != null && t.Namespace.StartsWith("WebServiceIntegration.Messages") &&
                     t.Namespace.EndsWith("Commands"))

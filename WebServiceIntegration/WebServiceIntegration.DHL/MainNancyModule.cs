@@ -18,7 +18,7 @@
 
                 var response = new Response {StatusCode = HttpStatusCode.OK};
 
-                if (item.ThrowException) throw new WebException("oooops , we have a problem");
+                if (item.ThrowException) throw new WebException("oops , we have a problem");
 
                 if (item.Fail)
                     response.StatusCode = HttpStatusCode.BadRequest;

@@ -14,8 +14,10 @@
         {
             var customerNumber = new Guid("f64bb7b3-fb1c-486e-b745-8062bf30e4d3");
 
-            Console.WriteLine("Handeling message CreateOrderShipping orderId: {0} OrderNumber: {1}", message.OrderId,
+            Console.WriteLine("Handling message CreateOrderShipping orderId: {0} OrderNumber: {1}", message.OrderId,
                 message.OrderNumber);
+
+            Data.OrderId = message.OrderId;
 
             // do some shipping related logic
             var dispatchOrderToDhl = new DispatchOrderToDhl
@@ -33,18 +35,24 @@
 
         public void Handle(DispatchOrderToDhlFailure message)
         {
-            // depending on the web service, we can retry
-            // notfy on failiure
+            // depending on notify web service, we can retry
+            // notify on failure
             // timeout to retry later
             // and so on
 
-            Console.WriteLine("Dispach Order: {0} and DispatchId: {1} failed ", message.OrderId, message.DispatchId);
+            Console.WriteLine("Dispatch Order: {0} and DispatchId: {1} failed ", message.OrderId, message.DispatchId);
         }
 
         public void Handle(DispatchOrderToDhlSucsess message)
         {
-            // complete of mark complete in state to keep the data or rehidrate the saga
-            Console.WriteLine("Dispach Order: {0} and DispatchId: {1} sucsess ", message.OrderId, message.DispatchId);
+            // complete of mark complete in state to keep the data or rehydrate the saga
+            Console.WriteLine("Dispatch Order: {0} and DispatchId: {1} success ", message.OrderId, message.DispatchId);
+        }
+
+        protected override void ConfigureHowToFindSaga(SagaPropertyMapper<CreateOrderShippingSagaData> mapper)
+        {
+            mapper.ConfigureMapping<CreateOrderShipping>(m => m.OrderId)
+               .ToSaga(s => s.OrderId);
         }
     }
 }

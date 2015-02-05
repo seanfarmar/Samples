@@ -9,5 +9,9 @@ namespace WebServiceIntegration.Shipping
 
     public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
     {
+        public void Customize(BusConfiguration configuration)
+        {
+            configuration.UsePersistence<InMemoryPersistence>();
+        }
     }
 }
