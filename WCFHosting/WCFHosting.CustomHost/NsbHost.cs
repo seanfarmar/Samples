@@ -41,5 +41,17 @@
 
             base.OnOpening();
         }
+
+        protected override void OnAbort()
+        {
+            Bus.Dispose();
+            base.OnAbort();
+        }
+
+        protected override void OnClosing()
+        {
+            Bus.Dispose();
+            base.OnClosing();
+        }
     }
 }
