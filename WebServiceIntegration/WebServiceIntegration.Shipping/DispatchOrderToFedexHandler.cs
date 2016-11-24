@@ -8,11 +8,11 @@
     using Messages.Response;
     using NServiceBus;
 
-    internal class DispatchOrderToDhlHandler : IHandleMessages<DispatchOrderToDhl>
+    internal class DispatchOrderToFedexHandler : IHandleMessages<DispatchOrderToFedex>
     {
         private readonly HttpClient _httpClient = new HttpClient();
 
-        public async Task Handle(DispatchOrderToDhl message, IMessageHandlerContext context)
+        public async Task Handle(DispatchOrderToFedex message, IMessageHandlerContext context)
         {
             HttpResponseMessage result = null;
 
@@ -26,7 +26,7 @@
             if (resultStatusCode == HttpStatusCode.OK)
             {
                 // all good? do bus.reply with success message
-                await context.Reply(new DispatchOrderToDhlSucsess
+                await context.Reply(new DispatchOrderToFedexSucsess
                 {
                     OrderId = message.OrderId,
                     HttpStatusCode = resultStatusCode,
@@ -37,7 +37,7 @@
             if (resultStatusCode != HttpStatusCode.OK)
             {
                 // issues? do bus.reply with issue message
-                await context.Reply(new DispatchOrderToDhlFailure
+                await context.Reply(new DispatchOrderToFedexFailure
                 {
                     OrderId = message.OrderId,
                     HttpStatusCode = resultStatusCode,
@@ -46,9 +46,9 @@
             }
         }
 
-        private async Task<HttpResponseMessage> GetWebPageHtmlSizeAsync(DispatchOrderToDhl message)
+        private async Task<HttpResponseMessage> GetWebPageHtmlSizeAsync(DispatchOrderToFedex message)
         {
-            const string uri = "http://localhost:12345/";
+            const string uri = "http://localhost:12346/"; // fedex api
             const string url = "/api/DispatchOrder/";
 
             _httpClient.BaseAddress = new Uri(uri);
