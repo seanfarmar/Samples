@@ -11,9 +11,8 @@
     internal class DispatchOrderToDhlHandler : IHandleMessages<DispatchOrderToDhl>
     {
         private readonly HttpClient HttpClient = new HttpClient();
-        public IBus Bus { get; set; }
 
-        public void Handle(DispatchOrderToDhl message)
+        public async Task Handle(DispatchOrderToDhl message, IMessageHandlerContext context)
         {
             HttpResponseMessage result = null;
 
@@ -27,7 +26,7 @@
             if (resultStatusCode == HttpStatusCode.OK)
             {
                 // all good? do bus.reply with sucsess message
-                Bus.Reply(new DispatchOrderToDhlSucsess
+                await context.Reply(new DispatchOrderToDhlSucsess
                 {
                     OrderId = message.OrderId,
                     HttpStatusCode = resultStatusCode,
@@ -38,7 +37,7 @@
             if (resultStatusCode != HttpStatusCode.OK)
             {
                 // issues? do bus.reply with issue message
-                Bus.Reply(new DispatchOrderToDhlFailure
+                await context.Reply(new DispatchOrderToDhlFailure
                 {
                     OrderId = message.OrderId,
                     HttpStatusCode = resultStatusCode,

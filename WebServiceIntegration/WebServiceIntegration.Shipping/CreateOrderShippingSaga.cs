@@ -1,16 +1,16 @@
 ﻿namespace WebServiceIntegration.Shipping
 {
     using System;
+    using System.Threading.Tasks;
     using Messages.Commands;
     using Messages.Response;
     using NServiceBus;
-    using NServiceBus.Saga;
 
     internal class CreateOrderShippingSaga : Saga<CreateOrderShippingSagaData>,
         IAmStartedByMessages<CreateOrderShipping>, IHandleMessages<DispatchOrderToDhlFailure>,
         IHandleMessages<DispatchOrderToDhlSucsess>
     {
-        public void Handle(CreateOrderShipping message)
+        public async Task Handle(CreateOrderShipping message, IMessageHandlerContext context)
         {
             var customerNumber = new Guid("f64bb7b3-fb1c-486e-b745-8062bf30e4d3");
 
@@ -30,10 +30,10 @@
             };
 
             //Dispatch the order to DHL
-            Bus.Send(dispatchOrderToDhl);
+            await context.Send(dispatchOrderToDhl);
         }
 
-        public void Handle(DispatchOrderToDhlFailure message)
+        public Task Handle(DispatchOrderToDhlFailure message, IMessageHandlerContext context)
         {
             // depending on notify web service, we can retry
             // notify on failure
@@ -41,12 +41,16 @@
             // and so on
 
             Console.WriteLine("Dispatch Order: {0} and DispatchId: {1} failed ", message.OrderId, message.DispatchId);
+
+            return Task.FromResult(0);
         }
 
-        public void Handle(DispatchOrderToDhlSucsess message)
+        public Task Handle(DispatchOrderToDhlSucsess message, IMessageHandlerContext context)
         {
             // complete of mark complete in state to keep the data or rehydrate the saga
             Console.WriteLine("Dispatch Order: {0} and DispatchId: {1} success ", message.OrderId, message.DispatchId);
+
+            return Task.FromResult(0);
         }
 
         protected override void ConfigureHowToFindSaga(SagaPropertyMapper<CreateOrderShippingSagaData> mapper)
