@@ -14,7 +14,7 @@
 
             Post["/api/DispatchOrder/"] = parameters =>
             {
-                var item = this.Bind<DispachRequest>();
+                var item = this.Bind<DispatchRequest>();
 
                 var response = new Response {StatusCode = HttpStatusCode.OK};
 
@@ -28,7 +28,7 @@
         }
     }
 
-    public class DispachRequest
+    public class DispatchRequest
     {
         public bool Fail
         {
