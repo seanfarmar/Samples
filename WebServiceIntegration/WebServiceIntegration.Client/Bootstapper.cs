@@ -1,15 +1,15 @@
 ﻿namespace WebServiceIntegration.Client
 {
     using System;
+    using System.Threading.Tasks;
     using Messages.Commands;
     using NServiceBus;
 
-    public class Bootstapper : IWantToRunWhenBusStartsAndStops
+    public class Bootstapper : IWantToRunWhenEndpointStartsAndStops
     {
         private CreateOrderShipping _orderShipping;
-        public IBus Bus { get; set; }
 
-        public void Start()
+        public async Task Start(IMessageSession session)
         {
             Console.WriteLine("Press 's' to send lots of commands");
             Console.WriteLine("Press 'e' to send a command that will throw an exception.");
@@ -32,7 +32,7 @@
                                 OrderNumber = i
                             };
 
-                            Bus.Send(_orderShipping);
+                            await session.Send(_orderShipping);
 
                             Console.WriteLine("Send a MyOtherCommand message number {2} type: {1} with Id {0}."
                                 , _orderShipping.OrderId
@@ -51,7 +51,7 @@
                             ThrowException = true
                         };
 
-                        Bus.Send(exceptionCommand);
+                        await session.Send(exceptionCommand);
 
                         Console.WriteLine("Sending a exceptionCommand the will throw, message type: {1} with Id {0}."
                             , exceptionCommand.OrderId, exceptionCommand.GetType());
@@ -62,8 +62,9 @@
             }
         }
 
-        public void Stop()
+        public Task Stop(IMessageSession session)
         {
+            return Task.FromResult(0);
         }
     }
 }

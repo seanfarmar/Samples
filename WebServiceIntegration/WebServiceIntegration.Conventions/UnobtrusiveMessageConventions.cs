@@ -4,7 +4,7 @@
 
     internal class UnobtrusiveMessageConventions : INeedInitialization
     {
-        public void Customize(BusConfiguration configuration)
+        public void Customize(EndpointConfiguration configuration)
         {
             configuration.Conventions()
                 .DefiningCommandsAs(t =>

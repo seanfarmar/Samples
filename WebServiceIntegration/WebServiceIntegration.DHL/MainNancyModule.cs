@@ -18,7 +18,7 @@
 
                 var response = new Response {StatusCode = HttpStatusCode.OK};
 
-                if (item.ThrowException) throw new WebException("oops , we have a problem");
+                if (item.ThrowException) throw new WebException("oops , we have a problem in the DHL module");
 
                 if (item.Fail)
                     response.StatusCode = HttpStatusCode.BadRequest;

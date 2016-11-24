@@ -1,13 +1,13 @@
 ﻿namespace WebServiceIntegration.Shipping
 {
     using System;
-    using NServiceBus.Saga;
+    using NServiceBus;
 
-    internal class CreateOrderShippingSagaData : IContainSagaData
+    internal class CreateOrderShippingSagaData : ContainSagaData
     {
-        public Guid Id { get; set; }
-        public string Originator { get; set; }
-        public string OriginalMessageId { get; set; }
         public Guid OrderId { get; set; }
+        public string CountryCode { get; set; }
+        public Guid CustomerNumber { get; set; }
+        public bool ThrowException { get; set; }
     }
 }
