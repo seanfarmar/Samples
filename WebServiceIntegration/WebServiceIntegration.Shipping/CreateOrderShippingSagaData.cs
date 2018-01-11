@@ -5,9 +5,9 @@
 
     internal class CreateOrderShippingSagaData : ContainSagaData
     {
-        public Guid OrderId { get; set; }
-        public string CountryCode { get; set; }
-        public Guid CustomerNumber { get; set; }
-        public bool ThrowException { get; set; }
+        public virtual Guid OrderId { get; set; }
+        public virtual string CountryCode { get; set; }
+        public virtual Guid CustomerNumber { get; set; }
+        public virtual bool ThrowException { get; set; }
     }
 }

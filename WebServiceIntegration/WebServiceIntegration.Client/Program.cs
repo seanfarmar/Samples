@@ -1,16 +1,40 @@
 ﻿namespace WebServiceIntegration.Client
 {
     using System;
+    using System.Configuration;
+    using System.Linq;
+    using System.ServiceProcess;
     using System.Threading.Tasks;
     using Messages.Commands;
     using NServiceBus;
 
-    public class Bootstapper : IWantToRunWhenEndpointStartsAndStops
+    static class Program
     {
-        private CreateOrderShipping _orderShipping;
+        private static CreateOrderShipping _orderShipping;
 
-        public async Task Start(IMessageSession session)
+        public static async Task Main(string[] args)
         {
+            var host = new Host(ConfigurationManager.ConnectionStrings["WebServiceIntegration"].ToString());
+
+            // pass this command line option to run as a windows service
+            if (args.Contains("--run-as-service"))
+            {
+                using (var windowsService = new WindowsService(host))
+                {
+                    ServiceBase.Run(windowsService);
+                    return;
+                }
+            }
+
+            Console.Title = Host.EndpointName;
+
+            var tcs = new TaskCompletionSource<object>();
+            Console.CancelKeyPress += (sender, e) => { tcs.SetResult(null); };
+
+            IEndpointInstance endpomEndpointInstance = await host.Start();
+
+            //await Console.Out.WriteLineAsync("Press Ctrl+C to exit...");
+
             Console.WriteLine("Press 's' to send lots of commands");
             Console.WriteLine("Press 'e' to send a command that will throw an exception.");
 
@@ -32,7 +56,7 @@
                                 OrderNumber = i
                             };
 
-                            await session.Send(_orderShipping);
+                            await endpomEndpointInstance.Send(_orderShipping).ConfigureAwait(false);
 
                             Console.WriteLine("Send a MyOtherCommand message number {2} type: {1} with Id {0}."
                                 , _orderShipping.OrderId
@@ -51,7 +75,7 @@
                             ThrowException = true
                         };
 
-                        await session.Send(exceptionCommand);
+                        await endpomEndpointInstance.Send(exceptionCommand).ConfigureAwait(false);
 
                         Console.WriteLine("Sending a exceptionCommand the will throw, message type: {1} with Id {0}."
                             , exceptionCommand.OrderId, exceptionCommand.GetType());
@@ -59,12 +83,14 @@
 
                         break;
                 }
-            }
-        }
 
-        public Task Stop(IMessageSession session)
-        {
-            return Task.FromResult(0);
+                Console.WriteLine(Environment.NewLine);
+                Console.WriteLine("Press 's' to send lots of commands");
+                Console.WriteLine("Press 'e' to send a command that will throw an exception.");
+            }
+
+            await tcs.Task;
+            await host.Stop();
         }
     }
 }
