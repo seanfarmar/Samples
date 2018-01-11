@@ -3,6 +3,7 @@
     using System;
     using System.Threading.Tasks;
     using ITOps;
+    using Nancy.Hosting.Self;
     using NServiceBus;
     using NServiceBus.Logging;
 
@@ -16,10 +17,14 @@
 
         public Host(string connectionString) => this.connectionString = connectionString;
 
+        private static readonly NancyHost NancyHost = new NancyHost(new Uri("http://localhost:12346"));
+
         public async Task<IEndpointInstance> Start()
         {
             try
             {
+                NancyHost.Start(); // start nancy hosting
+
                 var endpointConfiguration = new EndpointConfiguration(EndpointName)
                     .Configure(
                         connectionString, 
