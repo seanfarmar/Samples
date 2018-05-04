@@ -6,7 +6,6 @@
     using System.ServiceProcess;
     using System.Threading.Tasks;
     using Messages.Commands;
-    using NServiceBus;
 
     static class Program
     {
@@ -31,12 +30,12 @@
             var tcs = new TaskCompletionSource<object>();
             Console.CancelKeyPress += (sender, e) => { tcs.SetResult(null); };
 
-           await host.Start();
+           await host.Start().ConfigureAwait(false);
 
             await Console.Out.WriteLineAsync("Press Ctrl+C to exit...");
 
-            await tcs.Task;
-            await host.Stop();
+            await tcs.Task.ConfigureAwait(false);
+            await host.Stop().ConfigureAwait(false);
         }
     }
 }

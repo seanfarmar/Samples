@@ -50,7 +50,7 @@
         {
             try
             {
-                await endpoint?.Stop();
+                if (endpoint != null) await endpoint?.Stop();
             }
             catch (Exception ex)
             {
