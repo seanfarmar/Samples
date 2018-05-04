@@ -19,7 +19,7 @@
                .ToSaga(s => s.OrderId);
         }
 
-        public Task Handle(CreateOrderShipping message, IMessageHandlerContext context)
+        public async Task Handle(CreateOrderShipping message, IMessageHandlerContext context)
         {
             var customerNumber = new Guid("f64bb7b3-fb1c-486e-b745-8062bf30e4d3");
 
@@ -42,10 +42,11 @@
             };
 
             //Dispatch the order to DHL
-            return context.Send(dispatchOrderToDhl);
+            await context.Send(dispatchOrderToDhl)
+                .ConfigureAwait(false);
         }
 
-        public Task Handle(DispatchOrderToDhlFailure message, IMessageHandlerContext context)
+        public async Task Handle(DispatchOrderToDhlFailure message, IMessageHandlerContext context)
         {
             // depending on notify web service, we can retry
             // notify on failure
@@ -69,7 +70,8 @@
             };
 
             //Dispatch the order to Fedex
-            return context.Send(dispatchOrderToFedex);
+            await context.Send(dispatchOrderToFedex)
+                .ConfigureAwait(false);
         }
 
         public Task Handle(DispatchOrderToDhlSucsess message, IMessageHandlerContext context)
@@ -77,7 +79,7 @@
             // complete of mark complete in state to keep the data or rehydrate the saga
             Console.WriteLine("Dispatch Order: {0} and DispatchId: {1} success with DHL", message.OrderId, message.DispatchId);
 
-            return Task.FromResult(0);
+            return Task.CompletedTask;
         }
 
         public Task Handle(DispatchOrderToFedexSucsess message, IMessageHandlerContext context)
@@ -85,7 +87,7 @@
             // complete of mark complete in state to keep the data or rehydrate the saga
             Console.WriteLine("Dispatch Order: {0} and DispatchId: {1} success with Fedex", message.OrderId, message.DispatchId);
 
-            return Task.FromResult(0);
+            return Task.CompletedTask;
         }
 
         public Task Handle(DispatchOrderToFedexFailure message, IMessageHandlerContext context)
@@ -97,7 +99,7 @@
 
             Console.WriteLine("Dispatch Order: {0} and DispatchId: {1} failed with Fedex", message.OrderId, message.DispatchId);
 
-            return Task.FromResult(0);
+            return Task.CompletedTask;
         }
     }
 }

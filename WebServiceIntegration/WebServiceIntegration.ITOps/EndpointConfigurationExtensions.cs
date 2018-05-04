@@ -1,7 +1,6 @@
 ﻿namespace WebServiceIntegration.ITOps
 {
     using System;
-    using System.IO;
     using NServiceBus;
     using NServiceBus.Logging;
     using NServiceBus.Persistence;

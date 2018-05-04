@@ -31,7 +31,7 @@
             var tcs = new TaskCompletionSource<object>();
             Console.CancelKeyPress += (sender, e) => { tcs.SetResult(null); };
 
-            IEndpointInstance endpomEndpointInstance = await host.Start();
+            IEndpointInstance endpomEndpointInstance = await host.Start().ConfigureAwait(false);
 
             //await Console.Out.WriteLineAsync("Press Ctrl+C to exit...");
 
@@ -56,7 +56,8 @@
                                 OrderNumber = i
                             };
 
-                            await endpomEndpointInstance.Send(_orderShipping).ConfigureAwait(false);
+                            await endpomEndpointInstance.Send(_orderShipping)
+                                .ConfigureAwait(false);
 
                             Console.WriteLine("Send a MyOtherCommand message number {2} type: {1} with Id {0}."
                                 , _orderShipping.OrderId
@@ -75,7 +76,8 @@
                             ThrowException = true
                         };
 
-                        await endpomEndpointInstance.Send(exceptionCommand).ConfigureAwait(false);
+                        await endpomEndpointInstance.Send(exceptionCommand)
+                            .ConfigureAwait(false);
 
                         Console.WriteLine("Sending a exceptionCommand the will throw, message type: {1} with Id {0}."
                             , exceptionCommand.OrderId, exceptionCommand.GetType());
@@ -89,8 +91,8 @@
                 Console.WriteLine("Press 'e' to send a command that will throw an exception.");
             }
 
-            await tcs.Task;
-            await host.Stop();
+            await tcs.Task.ConfigureAwait(false);
+            await host.Stop().ConfigureAwait(false);
         }
     }
 }

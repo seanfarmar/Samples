@@ -31,7 +31,7 @@
                     OrderId = message.OrderId,
                     HttpStatusCode = resultStatusCode,
                     DispatchId = message.DispatchId
-                });
+                }).ConfigureAwait(false);
             }
 
             if (resultStatusCode != HttpStatusCode.OK)
@@ -42,7 +42,7 @@
                     OrderId = message.OrderId,
                     HttpStatusCode = resultStatusCode,
                     DispatchId = message.DispatchId
-                });
+                }).ConfigureAwait(false);
             }
         }
 
@@ -53,7 +53,8 @@
 
             _httpClient.BaseAddress = new Uri(uri);
 
-            return await _httpClient.PostAsJsonAsync(url, message);
+            return await _httpClient.PostAsJsonAsync(url, message)
+                .ConfigureAwait(false);
         }
     }
 }

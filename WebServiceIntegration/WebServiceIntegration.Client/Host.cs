@@ -28,7 +28,8 @@
                             // routing.RegisterPublisher(typeof(SomeEventType), "myendpoint");
                         });
 
-                endpoint = await Endpoint.Start(endpointConfiguration);
+                endpoint = await Endpoint.Start(endpointConfiguration)
+                    .ConfigureAwait(false);
             }
             catch (Exception ex)
             {
@@ -42,7 +43,7 @@
         {
             try
             {
-                await endpoint?.Stop();
+                if (endpoint != null) await endpoint?.Stop();
             }
             catch (Exception ex)
             {
@@ -54,7 +55,8 @@
         {
             try
             {
-                await context.Stop();
+                await context.Stop()
+                    .ConfigureAwait(false);
             }
             finally
             {
